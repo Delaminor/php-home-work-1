@@ -4,7 +4,7 @@ $input = trim(stream_get_contents(STDIN));
 $parts = preg_split('/\s+/', $input);
 
 if (count($parts) < 2) {
-    fwrite(STDERR, "Введите, пожалуйста, число\n");
+    fwrite(STDERR, "Введите, пожалуйста, число");
     exit(1);
 }
 
@@ -15,13 +15,13 @@ $a = filter_var($aRaw, FILTER_VALIDATE_INT);
 $b = filter_var($bRaw, FILTER_VALIDATE_INT);
 
 if ($a === false || $b === false) {
-    fwrite(STDERR, "Введите, пожалуйста, число\n");
+    fwrite(STDERR, "Введите, пожалуйста, число");
     exit(1);
 }
 
 if ((int)$b === 0) {
-    fwrite(STDERR, "Делить на 0 нельзя\n");
+    fwrite(STDERR, "Делить на 0 нельзя");
     exit(1);
 }
 
-echo ($a / $b) . PHP_EOL;
+echo ($a / $b);
